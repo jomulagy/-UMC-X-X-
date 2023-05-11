@@ -4,6 +4,7 @@
 > (1) 노션 개발팀 > 문서 > 3.secrets.json 다운<br>
 > (2) Dae_Dong_festival 폴더밑에 추가하기
 <br>
+
 2. 가상환경 생성하기
 > ```
 > python -m venv venv
