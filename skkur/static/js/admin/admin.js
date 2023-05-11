@@ -1,9 +1,8 @@
 // dummy data
-import { data } from './dummy.js';
+//import { data } from '/dummy.js';
 
 // 실제 data
 // const admin_data = localStorage.getItem('admin');
-// const data = JSON.parse(admin_data);
 
 // 진행중인 주문 / 완료 주문 활성화 버튼
 const inProgressButton = document.querySelector('#in-progress-order-button');
@@ -30,9 +29,7 @@ data.forEach(order => {
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
     orderContainer.appendChild(orderBox);
-
     const table_status = order.status === 'in_progress' ? '진행 중' : '완료';
-
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
         <div class="order-info">
@@ -81,6 +78,21 @@ data.forEach(order => {
         completedOrderContainer.appendChild(orderBox);
     }
 
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
     // 완료 버튼 누르면 진행중인 주문 -> 완료 주문 
     completeButton.addEventListener('click', () => {
         const foodState = orderBox.querySelector('.food-state');
@@ -90,11 +102,16 @@ data.forEach(order => {
 
         // 주문 상태 변경하기 API 호출 
         const body = {
+            id : orderId,
             state : "done"
         };
 
         fetch('/order/state/update/', {
             method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // csrftoken을 넣어줌
+            },
             body: JSON.stringify(body)
             })
             .then(response => {
@@ -116,5 +133,9 @@ data.forEach(order => {
             completeButtonWrap.removeChild(completeButton);
             completedOrderContainer.appendChild(orderBoxIdDiv);
         }
+    });
+
+    window.addEventListener('load', function() {
+      inProgressButton.click();
     });
 });

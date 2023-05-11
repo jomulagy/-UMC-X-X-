@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'css/admin/style.css' %}" />
     <title>관리자 페이지</title>
 </head>
 <body>
@@ -22,7 +23,8 @@
             <div class="completed-order-container"></div>
         </div>
     </div>
-    <script type="module" src="admin.js"></script> 
-    <script type="module" src="dummy.js"></script> 
+
+    <script type = "text/javascript">const data = {{queryset_json|safe}};</script>
+    <script type="text/javascript" src="{% static 'js/admin/admin.js' %}"></script>
 </body>
 </html>

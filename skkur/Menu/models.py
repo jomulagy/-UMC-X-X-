@@ -1,6 +1,6 @@
 from django.db import models
 
-class Order(models.Model):
+class Mode(models.Model):
     name = models.CharField(max_length = 100)
 
 # Create your models here.
@@ -9,9 +9,9 @@ class Menu(models.Model):
         ('y', '주문가능'),
         ('n', '품절'),
     )
-    mode = models.ForeignKey(Order,on_delete = models.CASCADE)
+    mode = models.ForeignKey(Mode,on_delete = models.CASCADE)
     name = models.CharField(max_length = 100)
-    image = models.ImageField(upload_to = "menu")
+    image = models.ImageField(null = True, upload_to = "menu")
     price = models.IntegerField()
     status = models.CharField(max_length = 100, choices = STATUS_CHOICES)
 
