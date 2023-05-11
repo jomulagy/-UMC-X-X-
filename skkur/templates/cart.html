@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>skrrrr.exe</title>
+</head>
+<body>
+    <div class="background">
+        <div class="menu_wrap">
+            
+        </div>
+        <div class="order">
+            <p id="total_price" style="padding-left: 10px; padding-right: 10px;">0</p>
+            <button class="order_button" onclick="order_request()">주문하기</button>
+            <button class="back_button" onclick="back()">돌아가기</button>
+        </div>
+    </div>
+
+    <!-- amount validation modal -->
+    <div id="order_alert" class="modal">
+        <div class="modal_contents">
+            <button target="order_alert" class="modal_close" onclick="modal_close(this)"></button>
+            <div class="modal_text">
+                총 금액이 클립보드에 복사 되었습니다. <br>
+                정말 주문 하시겠습니까? <br>
+                취소할 수 없습니다.
+            </div>
+            <button class="order_yes" onclick="order_yes()"></button>
+            <button class="order_no" onclick="order_no()"></button>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</html>

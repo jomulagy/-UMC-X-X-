@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>skrrrr.exe</title>
+</head>
+<body>
+    <div class="background">
+        <div class="menu_wrap">
+
+            {% for menu in menu_list %}
+                <div id="{{menu.id}}" class="menu">
+                    <div class="picture"> <img src="/img/{{menu.image}}.png" alt=""></div>
+                    <div class="option">
+                        <div class="name box">{{menu.name}}</div>
+                        <div class="able box">{{menu.status}}</div>
+                        <div class="price box">{{menu.price}}</div>
+                        <div class="pack">
+                            <div class="amount box">
+                                <button id="{{menu.id}}" class="down" onclick="down(this)"></button> 
+                                <p id="{{menu.id}}_amount">1</p>
+                                <button id= "{{menu.id}}"class="up" style="float: right;" onclick="up(this)"></button>
+                            </div>
+                            <button id="{{menu.id}}" class="add_button" onclick="add(this)">담기</button>
+                        </div>    
+                    </div>
+                </div>
+            {% endfor %}    
+
+            <!-- sample -->
+            <div id="menu_1" class="menu">
+                <div class="picture"> <img src="/img/example.png" alt=""></div>
+                <div class="option">
+                    <div class="name box">어묵탕</div>
+                    <div class="able box">주문 가능</div>
+                    <div class="price box">8000</div>
+                    <div class="pack">
+                        <div class="amount box">
+                            <button id="1" class="down" onclick="down(this)"></button> 
+                            <p id="1_amount">1</p>
+                            <button id="1" class="up" style="float: right;" onclick="up(this)"></button>
+                        </div>
+                        <button id="1" class="add_button" onclick="add(this)">담기</button>
+                    </div>    
+                </div>
+            </div>
+            <!-- sample -->
+
+
+            <!-- sample -->
+            <div id="menu_2" class="menu">
+                <div class="picture"> <img src="/img/example.png" alt=""></div>
+                <div class="option">
+                    <div class="name box">어묵탕2</div>
+                    <div class="able box">주문 가능</div>
+                    <div class="price box">8000</div>
+                    <div class="pack">
+                        <div class="amount box">
+                            <button id="2" class="down" onclick="down(this)"></button> 
+                            <p id="2_amount">1</p>
+                            <button id="2" class="up" style="float: right;" onclick="up(this)"></button>
+                        </div>
+                        <button id="2" class="add_button" onclick="add(this)">담기</button>
+                    </div>    
+                </div>
+            </div>
+            <!-- sample -->
+
+
+            <!-- sample -->
+            <div id="menu_3" class="menu">
+                <div class="picture"> <img src="/img/example.png" alt=""></div>
+                <div class="option">
+                    <div class="name box">어묵탕3</div>
+                    <div class="able box">주문 가능</div>
+                    <div class="price box">8000</div>
+                    <div class="pack">
+                        <div class="amount box">
+                            <button id="3" class="down" onclick="down(this)"></button> 
+                            <p id="3_amount">1</p>
+                            <button id="3" class="up" style="float: right;" onclick="up(this)"></button>
+                        </div>
+                        <button id="3" class="add_button" onclick="add(this)">담기</button>
+                    </div>    
+                </div>
+            </div>
+            <!-- sample -->
+
+        </div>
+        <div class="order">
+            <p id="order_count">0</p>
+            <button class="order_button" onclick="make_order()">장바구니</button>
+        </div>
+    </div>
+
+    <!-- amount validation modal -->
+    <div id="order_alert" class="modal">
+        <div class="modal_contents">
+            <button target="order_alert" class="modal_close" onclick="modal_close(this)"></button>
+            <div class="modal_text">
+                1개 이상 주문해 주세요.
+            </div>
+            <button target="order_alert" class="modal_ok" onclick="modal_close(this)"></button>
+        </div>
+    </div>
+
+     <!-- added product modal -->
+     <div id="add_alert" class="modal">
+        <div class="modal_contents">
+            <button target="add_alert" class="modal_close" onclick="modal_close(this)"></button>
+            <div class="modal_text">
+                ####
+            </div>
+            <button target="add_alert" class="modal_ok" onclick="modal_close(this)"></button>
+        </div>
+    </div>
+
+    <!-- cart alret modal -->
+    <div id="cart_alert" class="modal">
+        <div class="modal_contents">
+            <button target="cart_alert" class="modal_close" onclick="modal_close(this)"></button>
+            <div class="modal_text" style="display:flex;justify-content: center;align-items: center;">
+                <img src="{% static 'img/error.jpg' %}" alt="" style="width:40px; height: 40px;"> 장바구니에 담은 내역이 없습니다.
+            </div>
+            <button target="cart_alert" class="modal_ok" onclick="modal_close(this)"></button>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</html>
