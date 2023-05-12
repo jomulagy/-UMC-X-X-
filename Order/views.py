@@ -26,4 +26,16 @@ class OrderStateUpdate(View):
 
         return JsonResponse({'success': True})
 
+class OrderSearch(View):
+    def get(self, request, *args, **kwards):
+        return render(request, "order_search.html")
+
+    def post(self, request):
+        data = json.loads(request.body)
+        print(data)
+        order = Order.objects.filter(phone_num = data["keyword"])
+        data = Orders_to_Json(order)
+        print(data)
+        return JsonResponse(json.dumps(data, ensure_ascii=False), safe=False)
+
 

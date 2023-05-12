@@ -2,70 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1ff18fb-d147-4bb6-aa55-d2f9063b9571" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/order_search/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/order_search/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/order_search/order_search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/order_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kakao_test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/migrations/0002_rename_order_mode.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/migrations/0003_alter_menu_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Menu/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/0002_order_phone_num.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/0003_alter_order_menu_and_quantity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/0004_alter_order_menu_and_quantity_alter_order_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/0005_remove_order_menu_and_quantity_ordered_menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Order/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/Skkur/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/config/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/config/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/config/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/config/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/config/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/secrets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/css/admin/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/css/admin/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/css/cart.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/font/PressStart2P.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/assets/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/buttons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/error.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/menus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/pop_up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/img/up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/js/admin/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/js/admin/dummy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/js/cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/static/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/templates/admin/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/templates/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/skkur/templates/order_complete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Order/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skkur/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skkur/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -91,12 +45,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/js/order_search" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jomul\Desktop\Dae_Dong_festival\static\js\order_search" />
+      <recent name="C:\Users\jomul\Desktop\Dae_Dong_festival\static\css\order_search" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jomul\Desktop\Dae_Dong_festival\static\img\order_search" />
       <recent name="C:\Users\jomul\Desktop\Dae_Dong_festival\skkur\Order" />
     </key>
   </component>
