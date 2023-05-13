@@ -10,6 +10,7 @@ const inProgressButton = document.querySelector('#in-progress-order-button');
 const orderContainer = document.querySelector('.order-container');
 const completedButton = document.querySelector('#complete-order-button');
 const completedOrderContainer = document.querySelector('.completed-order-container');
+const completed_at = {};
 
 inProgressButton.addEventListener('click', () => {
     orderContainer.classList.toggle('active');
@@ -25,13 +26,11 @@ completedButton.addEventListener('click', () => {
     inProgressButton.classList.remove('active');
 });
 
-data.forEach(order => {
+data.forEach((order) => {
     const orderBox = document.createElement('div');
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
     orderContainer.appendChild(orderBox);
-
-    const table_status = order.status === 'in_progress' ? '진행 중' : '완료';
 
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
@@ -42,7 +41,7 @@ data.forEach(order => {
             </div>
             <div class="order-table-info">
                 <span class="table-number">table ${order.table_num}</span>
-                <span class="food-state">${table_status}</span>
+                <span class="order-number">${order.id}</span>
             </div>
         </div>
     `;
@@ -70,11 +69,11 @@ data.forEach(order => {
     orderBox.appendChild(completeButtonWrap);
 
     const completeButton = document.createElement('button');
-    completeButton.textContent = '완료';
+    completeButton.textContent = 'finish';
     completeButton.classList.add('complete-button');
     
     // 진행 중인 주문이 맞으면 orderBox를 orderContainer에 추가
-    if(table_status === '진행 중') {
+    if(order.status === 'in_progress') {
         completeButtonWrap.appendChild(completeButton);
         orderContainer.appendChild(orderBox);
     } else {
@@ -83,17 +82,18 @@ data.forEach(order => {
 
     // 완료 버튼 누르면 진행중인 주문 -> 완료 주문 
     completeButton.addEventListener('click', () => {
-        const foodState = orderBox.querySelector('.food-state');
         const orderId = orderBox.getAttribute('id').split('-')[2];
         const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
-        console.log(orderId, order.id);
+        const now = new Date();
+
+        completed_at[orderId] = now;
 
         // 주문 상태 변경하기 API 호출 
         const body = {
             state : "done"
         };
 
-        fetch('/order/state/update/', {
+        fetch('/order/state/update/', { // 임시 URI
             method: 'POST',
             body: JSON.stringify(body)
             })
@@ -108,13 +108,73 @@ data.forEach(order => {
                 console.error('상태 업데이트 요청이 실패했습니다:', error);
             });
 
-        foodState.textContent = '완료'; // API 호출 시 삭제할 코드 (임시로 수동으로 바꿈)
+        order.status = 'done'; // API 호출 시 삭제할 코드 (임시로 수동으로 바꿈)
 
-        // 주문 상태 변경하기 API 호출 성공해서 status text가 완료로 바뀌면 div 이동
-        if (foodState.textContent === '완료' && orderId == order.id) {
+        // 주문 상태 변경하기 API 호출 성공해서 status가 done으로 바뀌면 div 이동
+        if (order.status === 'done' && orderId == order.id) {
             orderContainer.removeChild(orderBoxIdDiv);
             completeButtonWrap.removeChild(completeButton);
             completedOrderContainer.appendChild(orderBoxIdDiv);
         }
+
+        // 생성 시간 정렬 => 가장 최근에 완료된 주문이 첫 번째로 보이게
+        const sortedTime = Object.entries(completed_at)
+            .sort((a, b) => new Date(b[1]) - new Date(a[1]));
+
+        const sortedKeys = sortedTime.map(([key]) => parseInt(key));
+        console.log(sortedKeys);
+
+        // 정렬된 orderBox를 completedOrderContainer에 추가
+        sortedKeys.forEach((orderId) => {
+            const orderBox = document.getElementById(`order-box-${orderId}`);
+            if (orderBox) {
+                completedOrderContainer.appendChild(orderBox);
+            }
+        });
+
+
     });
+
+    // 80분 경과 시 표시
+    const isTimeOut = (datetime) => {
+        // datetime: MM-DD HH:MM:SS 
+        const now = new Date();
+        const [, month, day, hour, minute] = datetime.match(/(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
+        const year = now.getFullYear();
+        const targetTime = new Date(`${year}-${month}-${day} ${hour}:${minute}`);
+        const timeDiff = now - targetTime;
+        const minutesDiff = Math.floor(timeDiff / (1000 * 60));
+        
+        // 80분 이상 경과했는지 여부 확인
+        if (minutesDiff >= 80) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    const datetime = order.created_at;
+    const isOut = isTimeOut(datetime);
+    const orderId = orderBox.getAttribute('id').split('-')[2];
+    const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
+    
+    if (isOut === true && orderId == order.id) {
+        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+    }
+});
+
+// orderContainer의 모든 orderBox 요소를 가져옴
+const orderBoxes = Array.from(orderContainer.getElementsByClassName('order-box'));
+
+// orderBox id 정렬 => 가장 오래된 주문이 첫 번째로 보이게
+// id 순서 = 생성 시간 순서
+orderBoxes.sort((a, b) => {
+    const idA = parseInt(a.getAttribute('id').split('-')[2]);
+    const idB = parseInt(b.getAttribute('id').split('-')[2]);
+    return idA - idB;
+});
+
+// 정렬된 orderBox를 orderContainer에 추가
+orderBoxes.forEach((orderBox) => {
+    orderContainer.appendChild(orderBox);
 });

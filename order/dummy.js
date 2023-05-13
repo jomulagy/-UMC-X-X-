@@ -29,8 +29,8 @@ export const data = [
                 quantity : 2
             }],
         table_num: 10,
-        created_at: '05-13 16:21:55',
-        status: 'in_progress'
+        created_at: '05-13 20:21:55',
+        status: 'done'
     },
     {
         id: 3,
@@ -40,13 +40,13 @@ export const data = [
                 name : "햄계란후라이",
                 quantity : 333
             }],
-        table_num: 3,
-        created_at: '05-13 20:21:55',
-        status: 'in_progress'
+        table_num: 8,
+        created_at: '05-13 22:21:55',
+        status: 'done'
     },
     {
         id: 4,
-        phone_number: '010-1234-5678',
+        phone_number: '011-1234-5678',
         menues : [
             {
                 name : "코카콜라 맛있다",
@@ -61,12 +61,12 @@ export const data = [
                 quantity : 1000
             }],
         table_num: 11,
-        created_at: '05-14 20:21:55',
+        created_at: '05-13 23:21:55',
         status: 'in_progress'
     },
     {
         id: 5,
-        phone_number: '010-1234-5678',
+        phone_number: '010-1234-3333',
         menues : [
             {
                 name : "멋사",
@@ -81,12 +81,12 @@ export const data = [
                 quantity : 0
             }],
         table_num: 1,
-        created_at: '05-15 20:21:55',
+        created_at: '05-13 23:41:55',
         status: 'in_progress'
     },
     {
         id: 6,
-        phone_number: '010-1234-5678',
+        phone_number: '010-1234-1234',
         menues : [
             {
                 name : "계란탕",
@@ -97,12 +97,12 @@ export const data = [
                 quantity : 2
             }],
         table_num: 5,
-        created_at: '05-15 22:21:55',
+        created_at: '05-14 22:21:55',
         status: 'in_progress'
     },
     {
         id: 7,
-        phone_number: '010-1234-5678',
+        phone_number: '010-1234-1234',
         menues : [
             {
                 name : "소세지",
@@ -113,12 +113,12 @@ export const data = [
                 quantity : 2
             }],
         table_num: 100,
-        created_at: '05-15 23:41:55',
+        created_at: '05-15 21:41:55',
         status: 'in_progress'
     },
     {
         id: 8,
-        phone_number: '010-1234-5678',
+        phone_number: '010-1234-1234',
         menues : [
             {
                 name : "어묵탕",
@@ -129,12 +129,12 @@ export const data = [
                 quantity : 2
             }],
         table_num: 20,
-        created_at: '05-15 23:50:55',
+        created_at: '05-15 23:21:55',
         status: 'in_progress'
     },
     {
         id: 9,
-        phone_number: '010-1234-5678',
+        phone_number: '010-1234-1234',
         menues : [
             {
                 name : "나쵸",
@@ -142,6 +142,26 @@ export const data = [
             }],
         table_num: 55,
         created_at: '05-16 09:21:55',
-        status: 'in_progress'
+        status: 'done'
+    },
+    {
+        id: 10,
+        phone_number: '010-1234-1234',
+        menues : [
+            {
+                name : "금도끼",
+                quantity : 1
+            },
+            {
+                name : "은도끼",
+                quantity : 2
+            },
+            {
+                name : "동도끼",
+                quantity : 3
+            }],
+        table_num: 0,
+        created_at: '05-16 19:21:55',
+        status: 'done'
     },
   ];

@@ -24,7 +24,6 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
         font-family: 'Press Start 2P', cursive;
         font-size: 12px;
@@ -51,9 +50,9 @@
         overflow-y: auto; 
     }
 
-    .admin-title {
+    .title {
         color: #000000;
-        font-size: 15px;
+        font-size: 20px;
     }
 
     #separation {
@@ -67,6 +66,36 @@
         color: #000000;
         padding: 0 auto;
         background-color: #BFBFBF !important;
+        border-top: 2px solid #FFFFFF;
+        border-left: 2px solid #FFFFFF;
+        border-bottom: 2px solid #5E5E5E;
+        border-right: 2px solid #5E5E5E;
+    }
+
+    .search-wrap {
+        padding-top: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #search-input {
+        height: 1.3rem;
+        width: 12rem;
+        border-width: 2px !important;
+        border-style: ridge !important;
+        border-color: #8A8A8A #FFFFFF #FFFFFF #8A8A8A !important;
+    }
+
+    #search-input:focus {
+        outline: none;
+    }
+
+    #search-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        font-size: 13px;
         border-top: 1px solid #E5E5E5;
         border-left: 1px solid #E5E5E5;
         border-bottom: 1px solid #5E5E5E;
@@ -74,53 +103,21 @@
         box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #8A8A8A;
     }
 
-    .order-button {
-        width: 7.5rem;
-        padding: 0.2rem 0;
-    }
-
-    #in-progress-order-button.active {
+    #search-button.active {
         border-top: 1px solid #5E5E5E;
         border-left: 1px solid #5E5E5E;
         border-bottom: 1px solid #E5E5E5;
         border-right: 1px solid #E5E5E5;
         box-shadow: inset -1px -1px 0 #FFFFFF, inset 1px 1px 0 #8A8A8A;
-    }
-
-    #complete-order-button.active {
-        border-top: 1px solid #5E5E5E;
-        border-left: 1px solid #5E5E5E;
-        border-bottom: 1px solid #E5E5E5;
-        border-right: 1px solid #E5E5E5;
-        box-shadow: inset -1px -1px 0 #FFFFFF, inset 1px 1px 0 #8A8A8A;
-    }
-
-    .button-wrap {
-        z-index: 2;
-        display: flex;
-        justify-content: space-around;
     }
 
     .order-container {
-        display: none;
-    }
-
-    .order-container.active {
         display: flex;
         flex-direction: column;
+        margin-top: 0.5rem;
         margin-bottom: 8.5rem;
     }
 
-    .completed-order-container {
-        display: none;
-    }
-
-    .completed-order-container.active {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 8.5rem;
-    }
-      
     .order-box {
         display: flex;
         flex-direction: column;
@@ -181,7 +178,7 @@
     .menu-wrap {
         display: flex;
     }
-
+    
     .food-name {
         width: 8.5em;
         margin-top: 3px;
@@ -192,17 +189,23 @@
         margin-top: 7px;
     }
 
-    .complete-button-wrap {
+    .in-progress-wrap {
         display: flex;
         justify-content: center;
     }
 
-    .complete-button {
+    .in-progress {
         margin-top: 1.5rem;
         padding: 3px 0;
         width: 10rem;
         display: flex;
         flex-direction: column;
+        font-size: 15px;
         align-items: center;
+        border-top: 1px solid #FFFFFF;
+        border-left: 1px solid #FFFFFF;
+        border-bottom: 1px solid #8A8A8A;
+        border-right: 1px solid #8A8A8A;
+        background-color: #BFBFBF;
     }
 }
