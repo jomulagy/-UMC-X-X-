@@ -12,8 +12,8 @@
 
 ## 주문 내역 검색 페이지
 <img width="250" alt="주문 내역 검색 페이지" src="https://github.com/jomulagy/Dae_Dong_festival/assets/63582234/2215c41b-7ccb-4fc8-ae6b-0dd3f89d15e6">
-<img width="250" alt="검색 완료 창1" src="https://github.com/jomulagy/Dae_Dong_festival/assets/63582234/23b919f3-edc6-4279-a433-b269641e8c56">
-<img width="250" alt="검색 완료 창2" src="https://github.com/jomulagy/Dae_Dong_festival/assets/63582234/f3040665-6faa-452c-b7ce-3e1bc29f1391">
+<img width="250" alt="검색 완료 창1" src="https://github.com/jomulagy/Dae_Dong_festival/assets/63582234/429f2493-8b84-472d-a9e9-3cde28595009">
+<img width="250" alt="검색 완료 창2" src="https://github.com/jomulagy/Dae_Dong_festival/assets/63582234/533f22e8-6dd2-42be-bc19-d7abcffec941">
 <br><br>   
 
 ## 관리자 페이지
