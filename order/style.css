@@ -120,11 +120,11 @@
         flex-direction: column;
         margin-bottom: 10px;
         padding: 10px;
-        border-top: 1px solid #E5E5E5;
-        border-left: 1px solid #E5E5E5;
-        border-bottom: 1px solid #000000;
-        border-right: 1px solid #000000;
-        box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #818181;
+        border-top: 2px solid #E5E5E5;
+        border-left: 2px solid #E5E5E5;
+        border-bottom: 2px solid #000000;
+        border-right: 2px solid #000000;
+        box-shadow: inset 2px 2px 0 #FFFFFF, inset -2px -2px 0 #818181;
         color: #000000;
         background-color: #BFBFBF;
     }
