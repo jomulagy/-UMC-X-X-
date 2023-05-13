@@ -2,11 +2,6 @@
 
 /* 모바일에 최적화된 CSS 코드 */
 @media (max-width: 767px) {
-    /* .page {
-        position: relative;
-        height: 5000px;
-    } */
-
     .page {
         position: relative;
         height: 100vh;
@@ -174,10 +169,10 @@
         align-items: flex-end;
     }
 
-    .food-state {
+    .order-number {
         margin-top: 2px;
         display: flex;
-        padding: 3px;
+        padding: 3px 0;
     }
 
     .menu-wrap {

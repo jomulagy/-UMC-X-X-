@@ -13,7 +13,7 @@ export const data = [
                 quantity : 2
             }],
         table_num: 8,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 23:21:55',
         status: 'in_progress'
     },
     {
@@ -29,7 +29,7 @@ export const data = [
                 quantity : 2
             }],
         table_num: 10,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 16:21:55',
         status: 'done'
     },
     {
@@ -41,7 +41,7 @@ export const data = [
                 quantity : 333
             }],
         table_num: 3,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 20:21:55',
         status: 'done'
     },
     {
@@ -61,7 +61,7 @@ export const data = [
                 quantity : 1000
             }],
         table_num: 11,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 20:21:55',
         status: 'in_progress'
     },
     {
@@ -81,7 +81,7 @@ export const data = [
                 quantity : 0
             }],
         table_num: 1,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 20:21:55',
         status: 'in_progress'
     },
     {
@@ -97,7 +97,51 @@ export const data = [
                 quantity : 2
             }],
         table_num: 5,
-        created_at: '05-08 07:21:55',
+        created_at: '05-13 19:21:55',
         status: 'in_progress'
+    },
+    {
+        id: 7,
+        phone_number: '010-1234-5678',
+        menues : [
+            {
+                name : "소세지",
+                quantity : 1100
+            },
+            {
+                name : "황도",
+                quantity : 2
+            }],
+        table_num: 100,
+        created_at: '05-13 19:41:55',
+        status: 'in_progress'
+    },
+    {
+        id: 8,
+        phone_number: '010-1234-5678',
+        menues : [
+            {
+                name : "어묵탕",
+                quantity : 1
+            },
+            {
+                name : "컵라면",
+                quantity : 2
+            }],
+        table_num: 20,
+        created_at: '05-13 19:21:55',
+        status: 'in_progress'
+    },
+    {
+        id: 9,
+        phone_number: '010-1234-5678',
+        menues : [
+            {
+                name : "나쵸",
+                quantity : 3
+            }],
+        table_num: 55,
+        created_at: '05-13 09:21:55',
+        status: 'done'
     },
   ];
