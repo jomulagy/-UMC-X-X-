@@ -82,7 +82,7 @@ data.forEach(order => {
     const isOut = isTimeOut(datetime);
     
     if (isOut === true && orderId == order.id) {
-        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
+        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
     }
 
     orderContainer.style.display = 'none';

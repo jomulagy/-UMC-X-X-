@@ -93,7 +93,7 @@ data.forEach((order) => {
             state : "done"
         };
 
-        fetch('/order/state/update/', {
+        fetch('/order/state/update/', { // 임시 URI
             method: 'POST',
             body: JSON.stringify(body)
             })
@@ -110,6 +110,13 @@ data.forEach((order) => {
 
         order.status = 'done'; // API 호출 시 삭제할 코드 (임시로 수동으로 바꿈)
 
+        // 주문 상태 변경하기 API 호출 성공해서 status가 done으로 바뀌면 div 이동
+        if (order.status === 'done' && orderId == order.id) {
+            orderContainer.removeChild(orderBoxIdDiv);
+            completeButtonWrap.removeChild(completeButton);
+            completedOrderContainer.appendChild(orderBoxIdDiv);
+        }
+
         // 생성 시간 정렬 => 가장 최근에 완료된 주문이 첫 번째로 보이게
         const sortedTime = Object.entries(completed_at)
             .sort((a, b) => new Date(b[1]) - new Date(a[1]));
@@ -118,19 +125,14 @@ data.forEach((order) => {
         console.log(sortedKeys);
 
         // 정렬된 orderBox를 completedOrderContainer에 추가
-        sortedKeys.forEach((orderId, index) => {
+        sortedKeys.forEach((orderId) => {
             const orderBox = document.getElementById(`order-box-${orderId}`);
             if (orderBox) {
                 completedOrderContainer.appendChild(orderBox);
             }
         });
 
-        // 주문 상태 변경하기 API 호출 성공해서 status가 done으로 바뀌면 div 이동
-        if (order.status === 'done' && orderId == order.id) {
-            orderContainer.removeChild(orderBoxIdDiv);
-            completeButtonWrap.removeChild(completeButton);
-            completedOrderContainer.appendChild(orderBoxIdDiv);
-        }
+
     });
 
     // 80분 경과 시 표시
@@ -157,7 +159,7 @@ data.forEach((order) => {
     const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
     
     if (isOut === true && orderId == order.id) {
-        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
+        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
     }
 });
 
