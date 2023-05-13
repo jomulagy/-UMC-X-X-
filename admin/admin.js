@@ -10,6 +10,7 @@ const inProgressButton = document.querySelector('#in-progress-order-button');
 const orderContainer = document.querySelector('.order-container');
 const completedButton = document.querySelector('#complete-order-button');
 const completedOrderContainer = document.querySelector('.completed-order-container');
+const completed_at = {};
 
 inProgressButton.addEventListener('click', () => {
     orderContainer.classList.toggle('active');
@@ -25,7 +26,7 @@ completedButton.addEventListener('click', () => {
     inProgressButton.classList.remove('active');
 });
 
-data.forEach(order => {
+data.forEach((order) => {
     const orderBox = document.createElement('div');
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
@@ -83,7 +84,9 @@ data.forEach(order => {
     completeButton.addEventListener('click', () => {
         const orderId = orderBox.getAttribute('id').split('-')[2];
         const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
-        console.log(orderId, order.id);
+        const now = new Date();
+
+        completed_at[orderId] = now;
 
         // 주문 상태 변경하기 API 호출 
         const body = {
@@ -106,6 +109,21 @@ data.forEach(order => {
             });
 
         order.status = 'done'; // API 호출 시 삭제할 코드 (임시로 수동으로 바꿈)
+
+        // 생성 시간 정렬 => 가장 최근에 완료된 주문이 첫 번째로 보이게
+        const sortedTime = Object.entries(completed_at)
+            .sort((a, b) => new Date(b[1]) - new Date(a[1]));
+
+        const sortedKeys = sortedTime.map(([key]) => parseInt(key));
+        console.log(sortedKeys);
+
+        // 정렬된 orderBox를 completedOrderContainer에 추가
+        sortedKeys.forEach((orderId, index) => {
+            const orderBox = document.getElementById(`order-box-${orderId}`);
+            if (orderBox) {
+                completedOrderContainer.appendChild(orderBox);
+            }
+        });
 
         // 주문 상태 변경하기 API 호출 성공해서 status가 done으로 바뀌면 div 이동
         if (order.status === 'done' && orderId == order.id) {
@@ -141,4 +159,20 @@ data.forEach(order => {
     if (isOut === true && orderId == order.id) {
         orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
     }
+});
+
+// orderContainer의 모든 orderBox 요소를 가져옴
+const orderBoxes = Array.from(orderContainer.getElementsByClassName('order-box'));
+
+// orderBox id 정렬 => 가장 오래된 주문이 첫 번째로 보이게
+// id 순서 = 생성 시간 순서
+orderBoxes.sort((a, b) => {
+    const idA = parseInt(a.getAttribute('id').split('-')[2]);
+    const idB = parseInt(b.getAttribute('id').split('-')[2]);
+    return idA - idB;
+});
+
+// 정렬된 orderBox를 orderContainer에 추가
+orderBoxes.forEach((orderBox) => {
+    orderContainer.appendChild(orderBox);
 });

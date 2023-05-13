@@ -4,12 +4,14 @@ import { data } from './dummy.js';
 const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
 const orderContainer = document.querySelector('.order-container');
+// const timeObj = {};
 
 data.forEach(order => {
     const orderBox = document.createElement('div');
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
     orderContainer.appendChild(orderBox);
+    // timeObj[order.id] = order.created_at;
 
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
@@ -97,7 +99,7 @@ searchButton.addEventListener('click', () => {
             const phoneNumber = order.phone_number;
             const orderId = order.id;
             const orderBox = document.querySelector(`#order-box-${orderId}`);
-    
+                       
             if(inputValue == phoneNumber) {
                 orderContainer.style.display = 'flex';
                 orderBox.style.display = 'block';
@@ -115,4 +117,18 @@ searchButton.addEventListener('click', () => {
         searchButton.classList.remove('active');
     }, 150); 
 });
+     
+// orderContainer의 모든 orderBox 요소를 가져옴
+const orderBoxes = Array.from(orderContainer.getElementsByClassName('order-box'));
 
+// orderBox id 정렬 => 가장 최근 주문이 첫 번째로 보이게
+orderBoxes.sort((a, b) => {
+    const idA = parseInt(a.getAttribute('id').split('-')[2]);
+    const idB = parseInt(b.getAttribute('id').split('-')[2]);
+    return idB - idA;
+});
+
+// 정렬된 orderBox를 orderContainer에 추가
+orderBoxes.forEach((orderBox) => {
+    orderContainer.appendChild(orderBox);
+});

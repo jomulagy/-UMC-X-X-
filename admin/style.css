@@ -47,6 +47,8 @@
     }
 
     .order-list {
+        width: 90%;
+        padding: 0 30px;
         position: sticky;
         /* laptop ver. */
         /* top: 15rem;
@@ -114,6 +116,7 @@
     .order-container.active {
         display: flex;
         flex-direction: column;
+        margin-bottom: 10rem;
     }
 
     .completed-order-container {
@@ -123,6 +126,7 @@
     .completed-order-container.active {
         display: flex;
         flex-direction: column;
+        margin-bottom: 10rem;
     }
       
     .order-box {

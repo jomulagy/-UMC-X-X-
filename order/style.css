@@ -44,6 +44,8 @@
 
     .order-list {
         position: sticky;
+        width: 90%;
+        padding: 0 30px;
         top: 9rem;
         height: calc(100vh - 9rem);
         overflow-y: auto; 
@@ -113,6 +115,7 @@
     .order-container {
         display: flex;
         flex-direction: column;
+        margin-bottom: 10rem;
     }
 
     .order-box {
