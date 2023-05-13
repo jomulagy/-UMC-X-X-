@@ -42,7 +42,7 @@ data.forEach(order => {
             </div>
             <div class="order-table-info">
                 <span class="table-number">table ${order.table_num}</span>
-                <span class="food-state">${table_status}</span>
+                <span class="food-state">123</span>
             </div>
         </div>
     `;
@@ -70,7 +70,7 @@ data.forEach(order => {
     orderBox.appendChild(completeButtonWrap);
 
     const completeButton = document.createElement('button');
-    completeButton.textContent = '완료';
+    completeButton.textContent = 'finish';
     completeButton.classList.add('complete-button');
     
     // 진행 중인 주문이 맞으면 orderBox를 orderContainer에 추가
