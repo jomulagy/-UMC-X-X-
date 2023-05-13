@@ -139,6 +139,6 @@ data.forEach(order => {
     const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
     
     if (isOut === true && orderId == order.id) {
-        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.6)';
+        orderBoxIdDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
     }
 });
