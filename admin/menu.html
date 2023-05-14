@@ -8,26 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <title>주문 내역 검색 페이지</title>
+    <title>관리자 메뉴 페이지</title>
 </head>
 <body>
     <div class="page">
         <div class="background"></div>
-        <div class="content">
+        <div class="content" id="menu-content">
             <div class="content-header">
-                <div class="title">주문 내역 검색</div>
+                <div class="admin-title">Menu</div>
                 <hr id="separation">
-                <div class="search-wrap">
-                    <input id="search-input" placeholder="전화번호 (010-0000-0000)">
-                    <button id="search-button">search</button>
-                    <button id="home-button">🏠</button>
-                </div>
             </div>
-            <div class="order-list">
-                <div class="order-container"></div>
+            <div class="menu-list">
+                <div class="menu-container"></div>
             </div>
         </div>
     </div>
-    <script type="module" src="search.js"></script> 
+    <script type="module" src="menu.js"></script>  
 </body>
 </html>
