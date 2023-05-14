@@ -7,4 +7,5 @@ urlpatterns = [
     path('admin/',views.OrderList.as_view(),name = "admin"),
     path('order/search/',views.OrderSearch.as_view(),name = "search"),
     path("order/state/update/",views.OrderStateUpdate.as_view(),name = "state_update"),
+    path("order/create",views.OrderCreate.as_view(),name = "create"),
 ]

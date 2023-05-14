@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>skrrrr.exe</title>
 </head>
 <body>
@@ -14,10 +15,14 @@
 
             {% for menu in menu_list %}
                 <div id="{{menu.id}}" class="menu">
-                    <div class="picture"> <img src="/img/{{menu.image}}.png" alt=""></div>
+                    <div class="picture">
+                        {% if menu.image %}
+                            <img src="{{menu.image.url}}" alt="">
+                        {% endif %}
+                    </div>
                     <div class="option">
                         <div class="name box">{{menu.name}}</div>
-                        <div class="able box">{{menu.status}}</div>
+                        <div class="able box">{{menu.able}}</div>
                         <div class="price box">{{menu.price}}</div>
                         <div class="pack">
                             <div class="amount box">
@@ -29,66 +34,7 @@
                         </div>    
                     </div>
                 </div>
-            {% endfor %}    
-
-            <!-- sample -->
-            <div id="menu_1" class="menu">
-                <div class="picture"> <img src="/img/example.png" alt=""></div>
-                <div class="option">
-                    <div class="name box">어묵탕</div>
-                    <div class="able box">주문 가능</div>
-                    <div class="price box">8000</div>
-                    <div class="pack">
-                        <div class="amount box">
-                            <button id="1" class="down" onclick="down(this)"></button> 
-                            <p id="1_amount">1</p>
-                            <button id="1" class="up" style="float: right;" onclick="up(this)"></button>
-                        </div>
-                        <button id="1" class="add_button" onclick="add(this)">담기</button>
-                    </div>    
-                </div>
-            </div>
-            <!-- sample -->
-
-
-            <!-- sample -->
-            <div id="menu_2" class="menu">
-                <div class="picture"> <img src="/img/example.png" alt=""></div>
-                <div class="option">
-                    <div class="name box">어묵탕2</div>
-                    <div class="able box">주문 가능</div>
-                    <div class="price box">8000</div>
-                    <div class="pack">
-                        <div class="amount box">
-                            <button id="2" class="down" onclick="down(this)"></button> 
-                            <p id="2_amount">1</p>
-                            <button id="2" class="up" style="float: right;" onclick="up(this)"></button>
-                        </div>
-                        <button id="2" class="add_button" onclick="add(this)">담기</button>
-                    </div>    
-                </div>
-            </div>
-            <!-- sample -->
-
-
-            <!-- sample -->
-            <div id="menu_3" class="menu">
-                <div class="picture"> <img src="/img/example.png" alt=""></div>
-                <div class="option">
-                    <div class="name box">어묵탕3</div>
-                    <div class="able box">주문 가능</div>
-                    <div class="price box">8000</div>
-                    <div class="pack">
-                        <div class="amount box">
-                            <button id="3" class="down" onclick="down(this)"></button> 
-                            <p id="3_amount">1</p>
-                            <button id="3" class="up" style="float: right;" onclick="up(this)"></button>
-                        </div>
-                        <button id="3" class="add_button" onclick="add(this)">담기</button>
-                    </div>    
-                </div>
-            </div>
-            <!-- sample -->
+            {% endfor %}
 
         </div>
         <div class="order">

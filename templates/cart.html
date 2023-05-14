@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,17 @@
 </head>
 <body>
     <div class="background">
-        <div class="menu_wrap">
+        <div class="menu_wrap" style="height: 20%;">
             
         </div>
-        <div class="order">
-            <p id="total_price" style="padding-left: 10px; padding-right: 10px;">0</p>
-            <button class="order_button" onclick="order_request()">주문하기</button>
+        <div class="cart_order">
+            <div class="order_info">
+                total <p id="total_price" style="padding-left: 10px; padding-right: 10px;">0</p>
+            </div>
+            <div class="order_info">
+                table <br> number <input id="table_number" type="text">
+            </div>     
+            <button type="button" class="order_button" onclick="order_request()">주문하기</button>
             <button class="back_button" onclick="back()">돌아가기</button>
         </div>
     </div>

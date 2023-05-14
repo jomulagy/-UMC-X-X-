@@ -29,7 +29,15 @@ data.forEach(order => {
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
     orderContainer.appendChild(orderBox);
-    const table_status = order.status === 'in_progress' ? '진행 중' : '완료';
+    if (order.status === 'checking'){
+        const table_status = "입금 확인 중"
+    }
+    else if (order.status === 'in_progress'){
+        const table_status = '진행 중'
+    }
+    else{
+        const table_status = '완료'
+    }
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
         <div class="order-info">

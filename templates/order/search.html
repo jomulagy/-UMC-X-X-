@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/order/style.css' %}" />
+    <title>주문 내역 검색 페이지</title>
+</head>
+<body>
+    <div class="page">
+        <div class="background"></div>
+        <div class="content">
+            <div class="content-header">
+                <div class="title">주문 내역 검색</div>
+                <hr id="separation">
+                <div class="search-wrap">
+                    <input id="search-input" placeholder="전화번호 (010-0000-0000)">
+                    <button id="search-button">search</button>
+                </div>
+            </div>
+            <div class="order-list">
+                <div class="order-container"></div>
+            </div>
+        </div>
+    </div>
+    <script type = "text/javascript">const data = {{data|safe}};</script>
+    <script type="text/javascript" src="{% static 'js/order/search.js' %}"></script>
+</body>
+</html>

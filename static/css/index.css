@@ -24,7 +24,7 @@ html,body {
     background-size: cover;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-top: 10%;
+    margin-top: 3%;
     max-width: 400px;
 }
 
@@ -142,7 +142,56 @@ html,body {
     line-height: 150%;
 }
 
-.order_button, back_button{
+.order button{
+    /* margin: 10px auto; */
+    width: 100%;
+    height: 40px;
+}
+.order p{
+    width: 30%;
+    margin: 0;
+    line-height: 220%;
+}
+
+
+
+.cart_order{
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    font-family: 'Press Start 2P';
+    font-size: small;
+    text-align: center;
+    line-height: 150%;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart_order button{
+    margin: 10px auto;
+    width: 100%;
+    height: 40px;
+}
+
+.order_info {
+    display: flex;
+    margin: 5px auto;
+    align-items: center;
+}
+
+.order_info p,input{
+    background-color: #FFFFFF;
+    width: 200px;
+    margin-left: 5px;
+    text-align: left;
+    padding-left: 10px;
+    height: 20px;
+    font-family: 'Press Start 2P';
+}
+
+.order_button{
     height: 100%;
     width: 70%;
     float: right;
@@ -155,12 +204,6 @@ html,body {
     border-left: 2px solid #E5E5E5;
     border-right:2px solid #5E5E5E;
     border-bottom:2px solid #5E5E5E;
-}
-
-.order p{
-    width: 30%;
-    margin: 0;
-    line-height: 220%;
 }
 
 .modal{
@@ -209,4 +252,57 @@ html,body {
     height: 30px;
     background: transparent;
     border: none;
+}
+
+
+
+
+
+
+/* complete */
+.complete_total{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.complete_pop{
+    width: 246px;
+    height: 151px;
+    background-image: url(/static/img/pop_up.png);
+    background-repeat: no-repeat;
+    margin: 10px auto;
+}
+
+.complete_button{
+    width: 170px;
+    height: 25px;
+    text-align: center;
+
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    background-color: #BFBFBF;
+    box-shadow: 2px 2px 0 #FFFFFF inset;
+    border-top: 2px solid #E5E5E5;
+    border-left: 2px solid #E5E5E5;
+    border-right:2px solid #5E5E5E;
+    border-bottom:2px solid #5E5E5E;
+}
+
+.complete_button_{
+    width: 260px;
+    height: 40px;
+    text-align: center;
+    margin: 10px auto;
+
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    background-color: #BFBFBF;
+    box-shadow: 2px 2px 0 #FFFFFF inset;
+    border-top: 2px solid #E5E5E5;
+    border-left: 2px solid #E5E5E5;
+    border-right:2px solid #5E5E5E;
+    border-bottom:2px solid #5E5E5E;
 }
