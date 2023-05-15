@@ -1,6 +1,5 @@
 var orders = localStorage.getItem('order');
 var order = JSON.parse(orders);
-console.log(order)
 var order_count = order.length;
 
 //메뉴 로드하기
@@ -19,8 +18,14 @@ calculate();
 //주문하기
 function order_request(){
     if(document.getElementById('table_number').value == ""){
-        alert("테이블 번호를 적어주세요.")
+        alert("테이블 번호를 입력해주세요.")
         return
+    }
+    if(document.getElementById('phone_number').value == ""){
+        alert('휴대폰 번호를 입력해주세요.')
+    }
+    if(!document.getElementById('check_box').checked){
+        alert('개인정보 수집에 동의해주세요.')
     }
     document.getElementById('order_alert').style.display = "block";
     copy();
@@ -48,8 +53,8 @@ function order_yes(){
    }, 5000);
    //주문 완료 페이지 이동
    localStorage.setItem('order',JSON.stringify(order))
-   console.log("talbe number"+document.getElementById('table_number').value);
     localStorage.setItem('table_number',document.getElementById('table_number').value);
+    localStorage.setItem('phone_number',document.getElementById('phone_number').value);
     location.replace("/order_complete")
 }
 
