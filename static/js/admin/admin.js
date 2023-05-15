@@ -42,7 +42,7 @@ data.forEach(order => {
     else{
         table_status = '완료'
     }
-   
+console.log(order.created_at)
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
         <div class="order-info">
@@ -52,8 +52,8 @@ data.forEach(order => {
             </div>
             <div class="order-table-info">
                 <span class="table-number">table ${order.table_num}</span>
+                <span class="order-number">${order.id}</span>
 
-                <span class="food-state">${table_status}</span>
             </div>
         </div>
     `;
@@ -140,7 +140,7 @@ data.forEach(order => {
                 console.error('상태 업데이트 요청이 실패했습니다:', error);
             });
 
-            completeButton.textContent = 'finish';
+            completeButton.textContent = '조리 완료';
             order.status = 'in_progress';
 
         } else { // finish 버튼 누르면 진행중인 주문 -> 완료 주문 

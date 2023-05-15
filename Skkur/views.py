@@ -9,7 +9,7 @@ class MenuList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context["menu_list"] = Menu.objects.filter(mode = "2")
+        context["menu_list"] = Menu.objects.filter(mode = "2",status = "true")
         return context
 
 class Cart(TemplateView):

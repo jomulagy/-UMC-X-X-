@@ -12,7 +12,7 @@ class OrderStateUpdate(View):
     def post(self, request):
         data = json.loads(request.body)
         order = Order.objects.get(id = data["id"])
-        order.status = "done"
+        order.status = data["state"]
         order.save()
 
         return JsonResponse({'success': True})

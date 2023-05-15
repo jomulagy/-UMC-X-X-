@@ -16,7 +16,7 @@
         <div class="background"></div>
         <div class="content">
             <div class="button-wrap">
-                <button class="order-button" id="menu-state-button">메뉴</button>
+                <button class="order-button" id="menu-state-button" onclick="location.href = '{% url 'manager:menu' %}'">메뉴</button>
                 <button class="order-button" id="in-progress-order-button">진행중인 주문</button>
                 <button class="order-button" id="complete-order-button">완료 주문</button>
             </div>
