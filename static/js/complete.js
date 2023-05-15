@@ -18,6 +18,7 @@ function pay_yes(){
     var order_final = new Array();
     var data = new Object();
     data.table_num = localStorage.getItem('table_number');
+    data.phone_num = localStorage.getItem('phone_number');
     data.menus = localStorage.getItem('order');
     order_final.push(data)
 
