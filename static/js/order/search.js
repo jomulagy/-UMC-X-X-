@@ -140,3 +140,10 @@ orderBoxes.sort((a, b) => {
 orderBoxes.forEach((orderBox) => {
     orderContainer.appendChild(orderBox);
 });
+
+// 주문 home으로 돌아가기
+const homeButton = document.querySelector('#home-button');
+
+homeButton.addEventListener('click', () => {
+    window.location.href = '../index.html'; // order home HTML 경로
+});
