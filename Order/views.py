@@ -40,7 +40,7 @@ class OrderSearch(ListView):
 class OrderCreate(View):
     def post(self, request):
         data = json.loads(request.body)
-        print(type(data[0]["menus"]))
+        print(data)
         menues = json.loads(data[0]["menus"])
         print(menues)
         total_price = 0
@@ -49,11 +49,12 @@ class OrderCreate(View):
         order.total_price = 0
 
         order.status = "checking"
-        order.phone_num = "010-4825-9803"
+        order.phone_num = data[0]["phone_num"]
         order.save()
         for menu in menues:
             new = Ordered_Menu()
             new.menu = Menu.objects.get(name = menu["name"])
+            print(new.menu)
             new.quantity = menu["amount"]
             new.order = order
             new.save()

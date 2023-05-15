@@ -14,7 +14,7 @@ class Order(models.Model):
     phone_num = PhoneNumberField()
 
 class Ordered_Menu(models.Model):
-    menu = models.OneToOneField("Menu.Menu",on_delete = models.CASCADE)
+    menu = models.ForeignKey("Menu.Menu",on_delete = models.CASCADE)
     order = models.ForeignKey(Order,on_delete = models.CASCADE)
     quantity = models.IntegerField()
 

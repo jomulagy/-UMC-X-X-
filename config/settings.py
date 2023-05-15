@@ -98,10 +98,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Skkur',
-        'USER': 'root',
-        'PASSWORD': '0161',
-        'HOST': 'localhost',
+        'NAME': 'skkur',
+        'USER': 'admin',
+        'PASSWORD': 'daedong123!',
+        'HOST': 'skkur.c3dwvkcntvtf.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3308',
         'OPTIONS': {'charset': 'utf8mb4'},
 
