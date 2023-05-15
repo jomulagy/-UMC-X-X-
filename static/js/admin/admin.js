@@ -29,14 +29,15 @@ data.forEach(order => {
     orderBox.classList.add('order-box');
     orderBox.setAttribute('id', `order-box-${order.id}`);
     orderContainer.appendChild(orderBox);
+    var table_status;
     if (order.status === 'checking'){
-        const table_status = "입금 확인 중"
+        table_status = "입금 확인 중"
     }
     else if (order.status === 'in_progress'){
-        const table_status = '진행 중'
+        table_status = '진행 중'
     }
     else{
-        const table_status = '완료'
+        table_status = '완료'
     }
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
@@ -47,6 +48,7 @@ data.forEach(order => {
             </div>
             <div class="order-table-info">
                 <span class="table-number">table ${order.table_num}</span>
+
                 <span class="food-state">${table_status}</span>
             </div>
         </div>
@@ -79,7 +81,7 @@ data.forEach(order => {
     completeButton.classList.add('complete-button');
     
     // 진행 중인 주문이 맞으면 orderBox를 orderContainer에 추가
-    if(table_status === '진행 중') {
+    if(table_status === '진행 중' || table_status === '입금 확인 중') {
         completeButtonWrap.appendChild(completeButton);
         orderContainer.appendChild(orderBox);
     } else {

@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     "Menu",
     "Order",
     "Skkur",
+    "Manager",
+
 ]
 
 MIDDLEWARE = [
