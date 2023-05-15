@@ -146,4 +146,5 @@ const homeButton =  document.querySelector('#home-button');
 
 homeButton.addEventListener('click', () => {
     window.location.href = '/'; // order home HTML 경로
+
 });
