@@ -36,8 +36,7 @@
 //        able: true
 //    },
 //];
-console.log("1")
-console.log(data)
+
 const menuContainer = document.querySelector('.menu-container');
 
 data.forEach((menu) => {
