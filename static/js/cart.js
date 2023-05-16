@@ -53,9 +53,7 @@ function order_yes(){
     localStorage.setItem('table_number',document.getElementById('table_number').value);
     localStorage.setItem('phone_number',document.getElementById('phone_number').value);
     var newWindow = window.open("http://kko.to/hD0-Cb93jJ", "_blank");
-    setTimeout(function(){
-        newWindow.close();
-    }, 5000);
+    newWindow.close();
     location.replace("/order_complete")
 }
 
