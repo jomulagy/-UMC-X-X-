@@ -17,7 +17,7 @@
         <div id = "button_area">
             <button id="search_button" class="add_button" onclick="location.href = '{% url 'order:search' %}'">주문내역 검색</button>
         </div>
-        <div class="menu_wrap">
+        <div class="menu_wrap_index">
 
             {% for menu in menu_list %}
                 <div id="{{menu.id}}" class="menu">

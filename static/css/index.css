@@ -46,9 +46,22 @@ html,body {
     width : 7rem;
     margin-left : 59%;
 }
-.menu_wrap{
+.menu_wrap_index{
     display: inline-flex;
     margin-top: 5%;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 98%;
+    /* scorll */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu_wrap{
+    display: inline-flex;
+    margin-top: 36%;
     padding-left: 6%;
     padding-right: 6%;
     width: 98%;
