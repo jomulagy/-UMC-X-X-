@@ -29,7 +29,7 @@ function pay_yes(){
     request.open('POST', '/order/create/', true);
     //타입 JSON
     request.setRequestHeader('Content-type', 'application/json');
-    const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
+    //const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
     console.log(csrftoken)
     request.setRequestHeader('X-CSRFToken', csrftoken);
     request.send(JSON.stringify(order_final))
