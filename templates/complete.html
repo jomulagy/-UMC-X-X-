@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>skrrrr.exe</title>
+</head>
+<body>
+    <div class="background">
+        <div class="menu_wrap" style="font-family: 'Press Start 2P'; flex-direction: column; justify-content: flex-start; align-content: center; align-items: center;">
+            <img src="{% static 'img/very_good.png' %}" style="width: 218px; height: 225px;" alt="">
+            <h1 style="color: #353394">15</h1>
+            <button class="complete_button_" onclick="location.replace('/order/search/')">주문 내역 검색</button>
+            <button class="complete_button_" onclick="location.replace('/')">더 주문하러 가기</button>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</html>
