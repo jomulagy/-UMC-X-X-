@@ -1,0 +1,10 @@
+﻿asgiref==3.6.0
+backports.zoneinfo==0.2.1
+Django==4.2.1
+django-phonenumber-field==7.1.0
+mysqlclient==2.1.1
+phonenumbers==8.13.11
+phonenumberslite==8.13.11
+Pillow==9.5.0
+sqlparse==0.4.4
+tzdata==2023.3

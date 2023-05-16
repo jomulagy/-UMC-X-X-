@@ -1,0 +1,32 @@
+.back_button{
+    height: 100%;
+    width: 70%;
+    float: right;
+
+    font-family: 'Press Start 2P';
+    font-weight: 700;
+    background-color: #BFBFBF;
+    box-shadow: 2px 2px 0 #FFFFFF inset;
+    border-top: 2px solid #E5E5E5;
+    border-left: 2px solid #E5E5E5;
+    border-right:2px solid #5E5E5E;
+    border-bottom:2px solid #5E5E5E;
+}
+
+.order_yes{
+    position: relative;
+    top: 8px;
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
+
+.order_no{
+    position: relative;
+    top: 8px;
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
