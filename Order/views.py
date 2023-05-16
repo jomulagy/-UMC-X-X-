@@ -3,6 +3,7 @@ from django.views.generic import View, ListView
 from .utils import Orders_to_Json
 import json
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Order, Ordered_Menu
 from Menu.models import Menu
@@ -29,6 +30,7 @@ class OrderSearch(ListView):
         return context
 
 class OrderCreate(View):
+    @csrf_exempt
     def post(self, request):
         data = json.loads(request.body)
         print(data)
