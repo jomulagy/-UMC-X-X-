@@ -26,7 +26,7 @@ function pay_yes(){
 
     //정보 전송
     const request = new XMLHttpRequest();
-    request.open('POST', '/order/create', true);
+    request.open('POST', '/order/create/', true);
     //타입 JSON
     request.setRequestHeader('Content-type', 'application/json');
     const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
