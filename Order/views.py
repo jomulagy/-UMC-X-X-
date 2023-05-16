@@ -8,15 +8,16 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Order, Ordered_Menu
 from Menu.models import Menu
 
+@csrf_exempt
+def OrderStateUpdate(request):
+        if request.method == "POST":
+            data = json.loads(request.body)
+            order = Order.objects.get(id = data["id"])
+            order.status = data["state"]
+            order.save()
 
-class OrderStateUpdate(View):
-    def post(self, request):
-        data = json.loads(request.body)
-        order = Order.objects.get(id = data["id"])
-        order.status = data["state"]
-        order.save()
+            return JsonResponse({'success': True})
 
-        return JsonResponse({'success': True})
 
 class OrderSearch(ListView):
     template_name = "order/search.html"
