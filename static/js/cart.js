@@ -52,10 +52,14 @@ function order_yes(){
    localStorage.setItem('order',JSON.stringify(order))
     localStorage.setItem('table_number',document.getElementById('table_number').value);
     localStorage.setItem('phone_number',document.getElementById('phone_number').value);
-    var newWindow = window.open("http://kko.to/hD0-Cb93jJ", "_blank");
-    setTimeout(function(){
-        newWindow.close();
-    }, 1000);
+//    var newWindow = window.open("http://kko.to/hD0-Cb93jJ", "_blank");
+//    setTimeout(function(){
+//        newWindow.close();
+//        console.log(1)
+//    }, 1000);
+    var xhr = new XMLHttpRequest();
+      xhr.open('GET', "http://kko.to/hD0-Cb93jJ", true);
+      xhr.send();
     location.replace("/order_complete")
 }
 
