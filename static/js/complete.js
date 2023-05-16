@@ -30,8 +30,8 @@ function pay_yes(){
     //타입 JSON
     request.setRequestHeader('Content-type', 'application/json');
     //const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
-    console.log(csrftoken)
-    request.setRequestHeader('X-CSRFToken', csrftoken);
+    //console.log(csrftoken)
+    //request.setRequestHeader('X-CSRFToken', csrftoken);
     request.send(JSON.stringify(order_final))
 
 

@@ -28,11 +28,11 @@ class OrderSearch(ListView):
         context["data"] = Orders_to_Json(queryset)
 
         return context
-
-class OrderCreate(View):
-    @csrf_exempt
-    def post(self, request):
+@csrf_exempt
+def OrderCreate(request):
+    if request.method == "POST":
         data = json.loads(request.body)
+
         print(data)
         menues = json.loads(data[0]["menus"])
         print(menues)
@@ -58,3 +58,4 @@ class OrderCreate(View):
         order.save()
 
         return JsonResponse({'success': True})
+
