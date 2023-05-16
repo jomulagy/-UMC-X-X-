@@ -148,3 +148,23 @@ homeButton.addEventListener('click', () => {
     window.location.href = '/'; // order home HTML 경로
 
 });
+$(document).ready(function() {
+  var phoneNumberInput = $('#search-input');
+
+  phoneNumberInput.on('input', function() {
+    var phoneNumber = phoneNumberInput.val().replace(/-/g, '');
+
+    var formattedPhoneNumber = '';
+    if (phoneNumber.length > 0) {
+      formattedPhoneNumber += phoneNumber.substring(0, 3);
+    }
+    if (phoneNumber.length > 3) {
+      formattedPhoneNumber += '-' + phoneNumber.substring(3, 7);
+    }
+    if (phoneNumber.length > 7) {
+      formattedPhoneNumber += '-' + phoneNumber.substring(7, 11);
+    }
+
+    phoneNumberInput.val(formattedPhoneNumber);
+  });
+});

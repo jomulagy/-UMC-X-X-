@@ -13,7 +13,10 @@
 <body>
     <div class="background" style="
     display: grid;
-    grid-template-rows: 80% 20%;">
+    grid-template-rows: 20% 60% 40%;">
+        <div id = "button_area">
+            <button id="search_button" class="add_button" onclick="location.href = '{% url 'order:search' %}'">주문내역 검색</button>
+        </div>
         <div class="menu_wrap">
 
             {% for menu in menu_list %}

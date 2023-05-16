@@ -25,35 +25,43 @@ function pay_yes(){
     order_final.push(data)
 
     //정보 전송
-    const request = new XMLHttpRequest();
-    request.open('POST', '/order/create/', true);
-    //타입 JSON
-    request.setRequestHeader('Content-type', 'application/json');
-    //const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
-    //console.log(csrftoken)
-    //request.setRequestHeader('X-CSRFToken', csrftoken);
-    request.send(JSON.stringify(order_final))
+    $.ajax({
+    url: '/order/create/',
+    type: 'POST',
+    data: JSON.stringify(order_final), // 전송할 데이터
 
 
-    request.onreadystatechange = function(event){
-        // 1) 데이터를 다 받았고, 2) 응답코드 200(성공)을 받았는지 체크
-        if(request.readyState == 4 && request.status == 200){
-            //local storage 초기화
-            localStorage.clear();
-            location.replace('/complete')
-        }else{
-            alert("주문 정보 전송 실패")
-        }
+    success: function(response) {
+      localStorage.clear();
+      location.replace('/complete')
+    },
+
+    // 요청이 실패한 경우
+    error: function(xhr, status, error) {
+      // 에러 처리 코드를 여기에 작성해주세요
+      alert("주문 정보 전송 실패")
     }
-
-    
-    
-
-
-
-
-
+  });
 }
+//    const request = new XMLHttpRequest();
+//    request.open('POST', '/order/create/', true);
+//    //타입 JSON
+//    request.setRequestHeader('Content-type', 'application/json');
+//    //const csrftoken = getCookie('csrftoken'); // csrftoken 가져오기
+//    //console.log(csrftoken)
+//    //request.setRequestHeader('X-CSRFToken', csrftoken);
+//    request.send(JSON.stringify(order_final))
+//
+//
+//    request.onreadystatechange = function(event){
+//        // 1) 데이터를 다 받았고, 2) 응답코드 200(성공)을 받았는지 체크
+//        if(request.readyState == 4 && request.status == 200){
+//            //local storage 초기화
+//            localStorage.clear();
+//            location.replace('/complete')
+//        }else{
+//            alert("주문 정보 전송 실패")
+//        }
 
 function pay_no(){
     localStorage.clear();

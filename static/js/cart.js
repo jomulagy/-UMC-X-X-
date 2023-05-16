@@ -140,3 +140,24 @@ function copy() {
     document.execCommand("copy");  //복사
     sel.removeRange(range);  //선택 정보 삭제
   }
+
+$(document).ready(function() {
+  var phoneNumberInput = $('#phone_number');
+
+  phoneNumberInput.on('input', function() {
+    var phoneNumber = phoneNumberInput.val().replace(/-/g, '');
+
+    var formattedPhoneNumber = '';
+    if (phoneNumber.length > 0) {
+      formattedPhoneNumber += phoneNumber.substring(0, 3);
+    }
+    if (phoneNumber.length > 3) {
+      formattedPhoneNumber += '-' + phoneNumber.substring(3, 7);
+    }
+    if (phoneNumber.length > 7) {
+      formattedPhoneNumber += '-' + phoneNumber.substring(7, 11);
+    }
+
+    phoneNumberInput.val(formattedPhoneNumber);
+  });
+});

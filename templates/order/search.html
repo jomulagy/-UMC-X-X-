@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/order/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>주문 내역 검색 페이지</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <div class="title">주문 내역 검색</div>
                 <hr id="separation">
                 <div class="search-wrap">
-                    <input id="search-input" placeholder="전화번호 (010-0000-0000)">
+                    <input id="search-input" placeholder="전화번호로 검색하기">
                     <button id="search-button">search</button>
                     <button id="home-button" onclick = "location.href = '{% url 'order:search' %}'">🏠</button>
 
