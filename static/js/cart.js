@@ -60,6 +60,8 @@ function order_yes(){
     var xhr = new XMLHttpRequest();
       xhr.open('GET', "http://kko.to/hD0-Cb93jJ", true);
       xhr.send();
+      setTimeout(function(){
+    }, 1000);
     location.replace("/order_complete")
 }
 
