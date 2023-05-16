@@ -12,6 +12,7 @@ function getCookie(name) {
   }
   return cookieValue;
 }
+document.getElementById("total_price").innerText = localStorage.getItem('total_price');
 
 function pay_yes(){
     //데이터 넣기
@@ -19,6 +20,7 @@ function pay_yes(){
     var data = new Object();
     data.table_num = localStorage.getItem('table_number');
     data.phone_num = localStorage.getItem('phone_number');
+
     data.menus = localStorage.getItem('order');
     order_final.push(data)
 

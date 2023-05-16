@@ -81,6 +81,7 @@ function calculate(){
         total += sum;
     }
     document.getElementById("total_price").innerText = total;
+    localStorage.setItem('total_price',total);
 }
 
 //수량 더하기
