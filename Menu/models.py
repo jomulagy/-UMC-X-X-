@@ -6,8 +6,8 @@ class Mode(models.Model):
 # Create your models here.
 class Menu(models.Model):
     STATUS_CHOICES = (
-        ('y', '주문가능'),
-        ('n', '품절'),
+        ('true', '주문가능'),
+        ('false', '품절'),
     )
     mode = models.ManyToManyField(Mode)
     name = models.CharField(max_length = 100)
