@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-r2=-s-)4(7ff-m9-e!d38k@g%$nh1e&(1$mx5x3j#8@&g3+jcm
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['http://*.skkur.site','https://*.127.0.0.1']
 
 # Application definition
 
