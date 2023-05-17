@@ -24,7 +24,7 @@
             <div class="completed-order-container"></div>
         </div>
     </div>
-
+    {% csrf_token %}
     <script type = "text/javascript">const data = {{queryset_json|safe}};</script>
     <script type="text/javascript" src="{% static 'js/admin/admin.js' %}"></script>
 </body>
