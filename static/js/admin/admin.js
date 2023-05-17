@@ -113,7 +113,7 @@ console.log(order.created_at)
         const orderId = orderBox.getAttribute('id').split('-')[2];
         const orderBoxIdDiv = document.querySelector(`#order-box-${orderId}`);
         const now = new Date();
-
+        console.log($("input[name='csrfmiddlewaretoken']").val())
         // 입금 확인 버튼 누르면 입금 확인 중 -> 조리 중
         if(order.status === 'checking') {
             const body = {
@@ -125,7 +125,7 @@ console.log(order.created_at)
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken') // csrftoken을 넣어줌
+                'X-CSRFToken': $("input[name='csrfmiddlewaretoken']").val() // csrftoken을 넣어줌
                 },
                 body: JSON.stringify(body)
             })
