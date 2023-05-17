@@ -7,8 +7,7 @@ import json
 
 from .models import Menu
 
-@csrf_exempt
-def OrderStateUpdate(request):
+def MenuStateUpdate(request):
         if request.method == "POST":
             data = json.loads(request.body)
             order = Menu.objects.get(id = data["id"])
@@ -17,7 +16,6 @@ def OrderStateUpdate(request):
                 order.status = "false"
                 order.save()
             else:
-                print(1)
                 order.status = "true"
                 order.save()
 

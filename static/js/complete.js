@@ -28,6 +28,9 @@ function pay_yes(){
     $.ajax({
     url: '/order/create/',
     type: 'POST',
+    headers : {
+        'X-CSRFToken': getCookie('csrftoken')
+    },
     data: JSON.stringify(order_final), // 전송할 데이터
 
 

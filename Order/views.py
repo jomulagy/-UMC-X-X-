@@ -29,7 +29,7 @@ class OrderSearch(ListView):
         context["data"] = Orders_to_Json(queryset)
 
         return context
-@csrf_exempt
+
 def OrderCreate(request):
     if request.method == "POST":
         data = json.loads(request.body)

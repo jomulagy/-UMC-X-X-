@@ -42,7 +42,6 @@ data.forEach(order => {
     else{
         table_status = '완료'
     }
-console.log(order.created_at)
     // 생성된 HTML 요소에 데이터를 적용
     orderBox.innerHTML = `
         <div class="order-info">
@@ -81,7 +80,13 @@ console.log(order.created_at)
     orderBox.appendChild(completeButtonWrap);
 
     const completeButton = document.createElement('button');
-    completeButton.textContent = '입금 확인';
+    console.log(table_status)
+    if(table_status === "입금 확인 중"){
+        completeButton.textContent = '입금 확인';
+    }
+    else{
+        completeButton.textContent = '조리 완료';
+    }
     completeButton.classList.add('complete-button');
     
     // 진행 중인 주문이 맞으면 orderBox를 orderContainer에 추가
@@ -125,7 +130,7 @@ console.log(order.created_at)
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': $("input[name='csrfmiddlewaretoken']").val() // csrftoken을 넣어줌
+                'X-CSRFToken': getCookie("csrftoken") // csrftoken을 넣어줌
                 },
                 body: JSON.stringify(body)
             })

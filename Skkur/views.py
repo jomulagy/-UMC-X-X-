@@ -13,11 +13,8 @@ class MenuList(ListView):
         context["menu_list"] = Menu.objects.filter(mode = "2",status = "true")
         return context
 
-class Cart(View):
-    def post(self,request):
-        data = (request.POST)
-        print(data)
-     # template_name = 'cart.html'
+class Cart(TemplateView):
+     template_name = 'cart.html'
 
 class OrderComplete(TemplateView):
      template_name = 'order_complete.html'

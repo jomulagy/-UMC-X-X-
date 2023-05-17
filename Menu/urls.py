@@ -5,6 +5,6 @@ app_name = "menu"
 
 urlpatterns = [
 
-    path("state/update/",views.OrderStateUpdate,name = "state_update"),
+    path("state/update/",views.MenuStateUpdate,name = "state_update"),
 
 ]

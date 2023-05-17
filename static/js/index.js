@@ -98,42 +98,10 @@ function make_order() {
     //order배열 JSON
     var data = JSON.stringify(order);
 
-    // 동적으로 form 엘리먼트 생성
-    var $form = $("#cart_form")
-
-    // cartData에 있는 데이터를 form에 추가
-    $.each(order, function (index, item) {
-        $('<input>').attr({
-            type: 'hidden',
-            name: 'items[' + index + '][name]',
-            value: item.name
-        }).appendTo($form);
-
-        $('<input>').attr({
-            type: 'hidden',
-            name: 'items[' + index + '][amount]',
-            value: item.amount
-        }).appendTo($form);
-
-        $('<input>').attr({
-            type: 'hidden',
-            name: 'items[' + index + '][price]',
-            value: item.price
-        }).appendTo($form);
-
-        $('<input>').attr({
-            type: 'hidden',
-            name: 'items[' + index + '][image]',
-            value: item.image
-        }).appendTo($form);
-    });
-    $form.appendTo('body').submit();
-
-
     //local storage 저장
-    //localStorage.setItem("order", data);
+    localStorage.setItem("order", data);
     //장바구니 페이지 이동
-    //location.replace("/cart");
+    location.replace("/cart");
 }
 
 //모달 닫기
@@ -165,3 +133,7 @@ document.documentElement.addEventListener('touchend', function (event) {
         event.preventDefault();
     } lastTouchEnd = now;
 }, false);
+
+window.onload = function() {
+  localStorage.clear();
+};
