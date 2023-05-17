@@ -24,11 +24,20 @@ class OrderSearch(ListView):
     model = Order
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = {}
         queryset = self.get_queryset()
         context["data"] = Orders_to_Json(queryset)
 
         return context
+
+    def get(self, request, *args, **kwargs):
+        if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+            data = self.get_context_data()
+            return JsonResponse(data)
+        else:
+            return super().get(request, *args, **kwargs)
+
+
 
 def OrderCreate(request):
     if request.method == "POST":

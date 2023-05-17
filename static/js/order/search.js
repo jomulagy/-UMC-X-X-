@@ -5,6 +5,8 @@ const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
 const orderContainer = document.querySelector('.order-container');
 // const timeObj = {};
+// 10초마다 업데이트
+setInterval(updateState, 10000);
 
 data.forEach(order => {
     const orderBox = document.createElement('div');
@@ -98,6 +100,8 @@ data.forEach(order => {
 
 // 검색 버튼 누르면 입력한 전화번호에 해당되는 주문 리스트 보여주기
 searchButton.addEventListener('click', () => {
+    updateState()
+
     if (!searchButton.classList.contains('active')) {
         searchButton.classList.toggle('active');
 
@@ -168,3 +172,52 @@ $(document).ready(function() {
     phoneNumberInput.val(formattedPhoneNumber);
   });
 });
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+function updateState() {
+  $.ajax({
+  url: '/order/search',
+  method: 'GET',
+  dataType: 'json',
+  headers : {
+        'X-CSRFToken': getCookie('csrftoken')
+   },
+  success: function(response) {
+    response.data.forEach(data => {
+        var order = $('.order-box').filter(function() {
+          return $(this).attr("id").split("-").slice(-1)[0] === data.id.toString();
+        });
+        var state = order.children('.in-progress-wrap').children('.in-progress')
+
+        if (data.status === 'checking'){
+
+            state.text("checking..")
+        }
+        else if (data.status === 'in_progress'){
+            state.text('ing...')
+        }
+        else{
+            state.text('finish')
+        }
+    });
+  },
+  error: function(xhr, status, error) {
+    // 데이터를 받아오는 과정에서 에러가 발생했을 때 수행할 동작을 여기에 작성합니다.
+    console.error(error);
+  }
+});
+
+}
+
