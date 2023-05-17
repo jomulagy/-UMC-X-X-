@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Order, Ordered_Menu
 from Menu.models import Menu
 
-@csrf_exempt
+
 def OrderStateUpdate(request):
         if request.method == "POST":
             data = json.loads(request.body)
