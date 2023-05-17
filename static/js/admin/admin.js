@@ -125,7 +125,7 @@ console.log(order.created_at)
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
-                'csrfmiddlewaretoken': getCookie('csrftoken') // csrftoken을 넣어줌
+                'X-CSRFToken': getCookie('csrftoken') // csrftoken을 넣어줌
                 },
                 body: JSON.stringify(body)
             })
