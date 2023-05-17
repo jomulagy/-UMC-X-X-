@@ -81,7 +81,7 @@
             <button target="cart_alert" class="modal_ok" onclick="modal_close(this)"></button>
         </div>
     </div>
-
+    <form id = "cart_form" method = "post" action = "{% url 'skkur:cart' %}">{% csrf_token %}</form>
 </body>
 <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 </html>
