@@ -3,7 +3,7 @@
 
 // 실제 data
 // const admin_data = localStorage.getItem('admin');
-
+setInterval((location.reload()),30000)
 // 진행중인 주문 / 완료 주문 활성화 버튼
 const inProgressButton = document.querySelector('#in-progress-order-button');
 const orderContainer = document.querySelector('.order-container');
@@ -12,7 +12,7 @@ const completedOrderContainer = document.querySelector('.completed-order-contain
 const menuStateButton = document.querySelector('#menu-state-button');
 const completed_at = {};
 const completedBoxes = Array.from(completedOrderContainer.getElementsByClassName('order-box'));
-
+console.log("reload");
 
 inProgressButton.addEventListener('click', () => {
     orderContainer.classList.toggle('active');
