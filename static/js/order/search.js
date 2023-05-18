@@ -5,8 +5,8 @@ const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
 const orderContainer = document.querySelector('.order-container');
 // const timeObj = {};
-// 10초마다 업데이트
-setInterval(updateState, 10000);
+
+
 
 data.forEach(order => {
     const orderBox = document.createElement('div');
@@ -220,4 +220,5 @@ function updateState() {
 });
 
 }
-
+// 10초마다 업데이트
+setInterval(updateState, 10000);

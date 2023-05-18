@@ -13,6 +13,7 @@ const menuStateButton = document.querySelector('#menu-state-button');
 const completed_at = {};
 const completedBoxes = Array.from(completedOrderContainer.getElementsByClassName('order-box'));
 
+
 inProgressButton.addEventListener('click', () => {
     orderContainer.classList.toggle('active');
     completedOrderContainer.classList.remove('active'); 
@@ -68,6 +69,7 @@ data.forEach(order => {
             <div class="menu-wrap">
                 <span class="food-name">${menu.name}</span>
                 <span class="food-quantity">${menu.quantity}</span>
+                <button class = "partial_complete">완료</button>
             </div>
         `;
         foodInfoContainer.appendChild(foodInfo);
@@ -245,3 +247,11 @@ orderBoxes.sort((a, b) => {
 orderBoxes.forEach((orderBox) => {
     orderContainer.appendChild(orderBox);
 });
+
+$(".partial_complete").click(function(){
+    $(this).parent().parent().css("display","none");
+})
+$(document).ready(function(){
+    $("#in-progress-button").click();
+});
+
