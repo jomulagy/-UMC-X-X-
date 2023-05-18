@@ -45,7 +45,7 @@ function add(e) {
     var parent = document.getElementById(id).getElementsByClassName('option')[0];
     var name = parent.getElementsByClassName('name')[0].innerText;
     var price = parent.getElementsByClassName('price')[0].innerText;
-    var image = $(".picture > img").attr("src")
+    var image = $("#"+id + "> .picture > img").attr("src")
     console.log(image)
     var target = id + "_amount";
     var amount = parseInt(document.getElementById(target).innerText);
