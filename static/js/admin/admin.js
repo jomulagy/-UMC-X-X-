@@ -253,6 +253,6 @@ $(".partial_complete").click(function(){
     $(this).parent().parent().css("display","none");
 })
 $(document).ready(function(){
-    $("#in-progress-button").click();
+    $("#in-progress-order-button").click();
 });
 
