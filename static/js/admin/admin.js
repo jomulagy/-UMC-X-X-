@@ -3,8 +3,9 @@
 
 // 실제 data
 // const admin_data = localStorage.getItem('admin');
-setInterval((location.reload()),30000)
-// 진행중인 주문 / 완료 주문 활성화 버튼
+setTimeout(function() {
+  location.reload();
+}, 30000);// 진행중인 주문 / 완료 주문 활성화 버튼
 const inProgressButton = document.querySelector('#in-progress-order-button');
 const orderContainer = document.querySelector('.order-container');
 const completedButton = document.querySelector('#complete-order-button');
